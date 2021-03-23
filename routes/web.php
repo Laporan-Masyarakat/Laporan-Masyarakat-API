@@ -14,3 +14,11 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
+
+// $router->get('/gmaps', 'LocationController@location');
+
+// Api Route
+
+// Auth API
+$router->get('api/login', 'AuthController@loginUser');
+$router->get('api/register', 'AuthController@registerUser');
