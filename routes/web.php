@@ -20,5 +20,5 @@ $router->get('/', function () use ($router) {
 // Api Route
 
 // Auth API
-$router->get('api/login', 'AuthController@loginUser');
-$router->get('api/register', 'AuthController@registerUser');
+$router->post('api/login', 'AuthController@loginUser');
+$router->post('api/register', 'AuthController@registerUser');
