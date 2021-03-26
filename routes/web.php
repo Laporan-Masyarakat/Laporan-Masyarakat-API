@@ -22,3 +22,8 @@ $router->get('/', function () use ($router) {
 // Auth API
 $router->post('api/login', 'AuthController@loginUser');
 $router->post('api/register', 'AuthController@registerUser');
+$router->get('api/logout', 'AuthController@logoutUser');
+
+// Laporan API
+$router->get('api/getlaporan', 'LaporanController@getLaporan');
+$router->post('api/createlaporan', 'LaporanController@createLaporan');
