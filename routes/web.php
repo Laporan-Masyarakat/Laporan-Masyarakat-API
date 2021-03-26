@@ -27,3 +27,7 @@ $router->get('api/logout', 'AuthController@logoutUser');
 // Laporan API
 $router->get('api/getlaporan', 'LaporanController@getLaporan');
 $router->post('api/createlaporan', 'LaporanController@createLaporan');
+$router->get('api/getIdLaporan/{id}', 'LaporanController@getDataId');
+
+// Status API
+$router->get('api/getstatus', 'StatusController@getStatus');

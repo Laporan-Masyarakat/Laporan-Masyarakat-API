@@ -10,7 +10,7 @@ class LaporanController extends Controller
     // get all data
     public function getLaporan()
     {
-        $data = Laporan::all();
+        $data = Laporan::with('status')->get();
         return response()->json(
             [
                 'succes' => true,
@@ -39,16 +39,18 @@ class LaporanController extends Controller
         }
 
         // get data
-        $nik = $request->input('nik');
+        $judullaporan = $request->input('judul_laporan');
         $tglpengaduan = $request->input('tgl_pengaduan');
         $isilaporan = $request->input('isi_laporan');
+        $lokasikejadian = $request->input('lokasi_kejadian');
         $status = $request->input('status');
 
         // data
         $data = [
-            'nik' => $nik,
-            'tgl_pengaduan' => $tglpengaduan,
+            'judul_laporan' => $judullaporan,
             'isi_laporan' => $isilaporan,
+            'tgl_pengaduan' => $tglpengaduan,
+            'lokasi_kejadian' => $lokasikejadian,
             'foto_laporan' => $fotolaporan,
             'status' => $status,
         ];
@@ -74,5 +76,22 @@ class LaporanController extends Controller
                 200
             );
         }
+    }
+
+    // get data per id
+    public function getDataId($id)
+    {
+        $data = Laporan::where('id', $id)
+            ->with('status')
+            ->get();
+        return response()->json(
+            [
+                'success' => true,
+                'status' => 200,
+                'message' => 'Data Laporan',
+                'data' => $data,
+            ],
+            200
+        );
     }
 }

@@ -7,10 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 class Laporan extends Model
 {
     protected $fillable = [
-        'nik',
-        'tgl_pengaduan',
+        'judul_laporan',
         'isi_laporan',
+        'tgl_pengaduan',
+        'lokasi_kejadian',
         'foto_laporan',
         'status',
     ];
+
+    public function status()
+    {
+        return $this->hasMany('App\Status', 'id', 'status');
+    }
 }
