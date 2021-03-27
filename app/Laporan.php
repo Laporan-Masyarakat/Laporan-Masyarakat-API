@@ -12,6 +12,8 @@ class Laporan extends Model
         'tgl_pengaduan',
         'lokasi_kejadian',
         'foto_laporan',
+        'instansi_tujuan',
+        'kategori_laporan',
         'status',
     ];
 

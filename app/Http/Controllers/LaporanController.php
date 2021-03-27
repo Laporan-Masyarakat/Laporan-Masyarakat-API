@@ -42,8 +42,9 @@ class LaporanController extends Controller
         $judullaporan = $request->input('judul_laporan');
         $tglpengaduan = $request->input('tgl_pengaduan');
         $isilaporan = $request->input('isi_laporan');
+        $instansi = $request->input('instansi_tujuan');
+        $kategorilaporan = $request->input('kategori_laporan');
         $lokasikejadian = $request->input('lokasi_kejadian');
-        $status = $request->input('status');
 
         // data
         $data = [
@@ -51,8 +52,9 @@ class LaporanController extends Controller
             'isi_laporan' => $isilaporan,
             'tgl_pengaduan' => $tglpengaduan,
             'lokasi_kejadian' => $lokasikejadian,
+            'instansi_tujuan' => $instansi,
+            'kategori_laporan' => $kategorilaporan,
             'foto_laporan' => $fotolaporan,
-            'status' => $status,
         ];
 
         if (Laporan::create($data)) {

@@ -31,3 +31,9 @@ $router->get('api/getIdLaporan/{id}', 'LaporanController@getDataId');
 
 // Status API
 $router->get('api/getstatus', 'StatusController@getStatus');
+
+// Instansi API
+$router->get('api/getinstansi', 'InstansiController@getInstansi');
+
+// Kategori Laporan API
+$router->get('api/getkategori', 'KategoriController@getKategori');
