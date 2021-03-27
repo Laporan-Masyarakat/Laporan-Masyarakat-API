@@ -28,6 +28,7 @@ $router->get('api/logout', 'AuthController@logoutUser');
 $router->get('api/getlaporan', 'LaporanController@getLaporan');
 $router->post('api/createlaporan', 'LaporanController@createLaporan');
 $router->get('api/getIdLaporan/{id}', 'LaporanController@getDataId');
+$router->post('api/editstatus/{id}', 'LaporanController@updateStatus');
 
 // Status API
 $router->get('api/getstatus', 'StatusController@getStatus');

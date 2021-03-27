@@ -21,4 +21,9 @@ class Laporan extends Model
     {
         return $this->hasMany('App\Status', 'id', 'status');
     }
+
+    public function kategori_laporan()
+    {
+        return $this->hasMany('App\KategoriLaporan', 'id', 'kategori_laporan');
+    }
 }
