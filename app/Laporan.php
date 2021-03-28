@@ -8,6 +8,7 @@ class Laporan extends Model
 {
     protected $fillable = [
         'judul_laporan',
+        'id_user',
         'isi_laporan',
         'tgl_pengaduan',
         'lokasi_kejadian',
@@ -25,5 +26,10 @@ class Laporan extends Model
     public function kategori_laporan()
     {
         return $this->hasMany('App\KategoriLaporan', 'id', 'kategori_laporan');
+    }
+
+    public function tanggapan()
+    {
+        return $this->belongsTo('App\Tanggapan');
     }
 }

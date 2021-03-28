@@ -38,3 +38,7 @@ $router->get('api/getinstansi', 'InstansiController@getInstansi');
 
 // Kategori Laporan API
 $router->get('api/getkategori', 'KategoriController@getKategori');
+
+// Tanggapan Laporan API
+$router->get('api/gettanggapan', 'TanggapanController@getTanggapan');
+$router->post('api/createtanggapan', 'TanggapanController@createTanggapan');

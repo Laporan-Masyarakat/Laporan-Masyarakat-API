@@ -40,6 +40,7 @@ class LaporanController extends Controller
 
         // get data
         $judullaporan = $request->input('judul_laporan');
+        $iduser = $request->input('id_user');
         $tglpengaduan = $request->input('tgl_pengaduan');
         $isilaporan = $request->input('isi_laporan');
         $instansi = $request->input('instansi_tujuan');
@@ -49,6 +50,7 @@ class LaporanController extends Controller
         // data
         $data = [
             'judul_laporan' => $judullaporan,
+            'id_user' => $iduser,
             'isi_laporan' => $isilaporan,
             'tgl_pengaduan' => $tglpengaduan,
             'lokasi_kejadian' => $lokasikejadian,
