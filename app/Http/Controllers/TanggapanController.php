@@ -59,4 +59,13 @@ class TanggapanController extends Controller
             );
         }
     }
+
+    // delete data
+    public function deleteTanggapan($id)
+    {
+        $data = Tanggapan::where('id', $id)->first();
+        $data->delete();
+
+        return response('Berhasil Menghapus Tanggapan');
+    }
 }

@@ -24,6 +24,10 @@ $router->post('api/login', 'AuthController@loginUser');
 $router->post('api/register', 'AuthController@registerUser');
 $router->get('api/logout', 'AuthController@logoutUser');
 
+// User API
+$router->get('api/getuser', 'UsersController@getUser');
+$router->post('api/createuser', 'UsersController@createUser');
+
 // Laporan API
 $router->get('api/getlaporan', 'LaporanController@getLaporan');
 $router->post('api/createlaporan', 'LaporanController@createLaporan');
@@ -39,6 +43,17 @@ $router->get('api/getinstansi', 'InstansiController@getInstansi');
 // Kategori Laporan API
 $router->get('api/getkategori', 'KategoriController@getKategori');
 
-// Tanggapan Laporan API
+// Tanggapan API
 $router->get('api/gettanggapan', 'TanggapanController@getTanggapan');
 $router->post('api/createtanggapan', 'TanggapanController@createTanggapan');
+$router->delete(
+    'api/deletetanggapan/{id}',
+    'TanggapanController@deleteTanggapan'
+);
+
+// Role API
+$router->get('api/getrole', 'RoleController@getRole');
+
+// Generate API
+$router->get('api/getpdf', 'GenerateController@printPDF');
+$router->get('api/view', 'GenerateController@view');

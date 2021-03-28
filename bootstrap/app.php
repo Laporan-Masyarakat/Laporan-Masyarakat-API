@@ -58,6 +58,7 @@ $app->singleton(
 */
 
 $app->configure('app');
+$app->configure('dompdf');
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +92,7 @@ $app->middleware([App\Http\Middleware\CorsMiddleware::class]);
 |
 */
 
+$app->register(\Barryvdh\DomPDF\ServiceProvider::class);
 $app->register(Flipbox\LumenGenerator\LumenGeneratorServiceProvider::class);
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);

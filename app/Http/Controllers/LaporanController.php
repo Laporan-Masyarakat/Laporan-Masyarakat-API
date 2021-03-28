@@ -10,7 +10,7 @@ class LaporanController extends Controller
     // get all data
     public function getLaporan()
     {
-        $data = Laporan::with('status', 'kategori_laporan')->get();
+        $data = Laporan::with('statuslaporan', 'laporankategori')->get();
         return response()->json(
             [
                 'succes' => true,
@@ -86,7 +86,7 @@ class LaporanController extends Controller
     public function getDataId($id)
     {
         $data = Laporan::where('id', $id)
-            ->with('status')
+            ->with('statuslaporan')
             ->get();
         return response()->json(
             [

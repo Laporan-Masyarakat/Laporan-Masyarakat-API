@@ -18,12 +18,12 @@ class Laporan extends Model
         'status',
     ];
 
-    public function status()
+    public function statuslaporan()
     {
         return $this->hasMany('App\Status', 'id', 'status');
     }
 
-    public function kategori_laporan()
+    public function laporankategori()
     {
         return $this->hasMany('App\KategoriLaporan', 'id', 'kategori_laporan');
     }
