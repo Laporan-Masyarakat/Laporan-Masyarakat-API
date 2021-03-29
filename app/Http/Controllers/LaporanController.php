@@ -117,4 +117,34 @@ class LaporanController extends Controller
             200
         );
     }
+
+    // get total laporan selesai
+    public function getSelesai()
+    {
+        $data = Laporan::where('status', 3)->get();
+        return response()->json(
+            [
+                'succes' => true,
+                'status' => 200,
+                'message' => 'All Laporan Selesai',
+                'result' => $data,
+            ],
+            200
+        );
+    }
+
+    // get total laporan belum selesai
+    public function getBelum()
+    {
+        $data = Laporan::where('status', 1)->get();
+        return response()->json(
+            [
+                'succes' => true,
+                'status' => 200,
+                'message' => 'All Laporan Belum Selesai',
+                'result' => $data,
+            ],
+            200
+        );
+    }
 }

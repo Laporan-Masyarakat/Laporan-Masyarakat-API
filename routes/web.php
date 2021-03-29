@@ -27,12 +27,15 @@ $router->get('api/logout', 'AuthController@logoutUser');
 // User API
 $router->get('api/getuser', 'UsersController@getUser');
 $router->post('api/createuser', 'UsersController@createUser');
+$router->get('api/getmasyarakat', 'UsersController@getMasyarakat');
 
 // Laporan API
 $router->get('api/getlaporan', 'LaporanController@getLaporan');
 $router->post('api/createlaporan', 'LaporanController@createLaporan');
 $router->get('api/getIdLaporan/{id}', 'LaporanController@getDataId');
 $router->post('api/editstatus/{id}', 'LaporanController@updateStatus');
+$router->get('api/getlaporanselesai', 'LaporanController@getSelesai');
+$router->get('api/getlaporanbelum', 'LaporanController@getBelum');
 
 // Status API
 $router->get('api/getstatus', 'StatusController@getStatus');

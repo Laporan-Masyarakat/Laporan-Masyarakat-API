@@ -61,4 +61,19 @@ class UsersController extends Controller
 
         return response()->json($out, $out['code']);
     }
+
+    // get data masyarakat
+    public function getMasyarakat()
+    {
+        $data = User::where('role', 3)->get();
+        return response()->json(
+            [
+                'succes' => true,
+                'status' => 200,
+                'message' => 'All Users',
+                'result' => $data,
+            ],
+            200
+        );
+    }
 }
